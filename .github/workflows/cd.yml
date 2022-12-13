@@ -1,0 +1,17 @@
+name: Laravel.php Supervisor
+
+on: push
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cd
+        uses: tripteki/cd-package@1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repotoken: ${{ secrets.REPOSITORY_TOKEN }}
+          repouser: tripteki
+          repository: https://packagist.org
+          language: php
+          artifact: composer.json
