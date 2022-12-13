@@ -1,0 +1,59 @@
+{
+    "name": "tripteki/laravelphp-supervisor",
+    "version": "1.0.0",
+    "description": "Trip Teknologi's Laravel.php Supervisor",
+
+    "readme": "README.md",
+    "license": "MIT",
+    "authors": [ { "name": "Trip Teknologi", "email": "tripteki.company@gmail.com" } ],
+    "homepage": "https://github.com/tripteki/laravelphp-supervisor",
+    "support": { "issues": "https://github.com/tripteki/laravelphp-supervisor/issues" },
+
+    "require": {
+
+        "php": "^8.0.2",
+        "ext-swoole": "*",
+
+        "tripteki/laravelphp-notification": "^1.0.0",
+        "guzzlehttp/guzzle": "^7.5.0",
+        "laravel/octane": "^1.3.9",
+        "beyondcode/laravel-websockets": "^2.0.0-beta.37",
+        "pusher/pusher-php-server": "7.0.0"
+    },
+
+    "require-dev": {},
+
+    "autoload": {
+
+        "files": [
+
+            "src/Helpers/Async.php",
+            "src/Helpers/setImmediate.php",
+            "src/Helpers/setInterval.php",
+            "src/Helpers/Exec.php",
+            "src/Helpers/Spawn.php"
+        ],
+
+        "psr-4": {
+
+            "Tripteki\\Supervisor\\": "src/"
+        }
+    },
+
+    "autoload-dev": {},
+
+    "extra": {
+
+        "laravel": {
+
+            "dont-discover": [],
+
+            "providers": [
+
+                "Tripteki\\Supervisor\\Providers\\SupervisorServiceProvider"
+            ],
+
+            "aliases": []
+        }
+    }
+}
